@@ -30,6 +30,7 @@ class TutorialViewTests(unittest.TestCase):
         from .views import TutorialViews
 
         request = testing.DummyRequest()
+        import pdb; pdb.set_trace()
         request.GET['name'] = 'Jane Doe'
         inst = TutorialViews(request)
         response = inst.plain()
