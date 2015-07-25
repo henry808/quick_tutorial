@@ -26,7 +26,8 @@ class TutorialViews(object):
         return {'page_title': 'Hello View'}
 
     # Posting to /howdy/first/last via the "Edit" submit button
-    @view_config(request_method='POST', renderer='edit.pt')
+    @view_config(request_method='POST', request_param='form.edit',
+        renderer='edit.pt')
     def edit(self):
         new_name = self.request.params['new_name']
         return {'page_title': 'Edit View', 'new_name': new_name}
